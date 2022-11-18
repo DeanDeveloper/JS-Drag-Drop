@@ -1,0 +1,221 @@
+body {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     background-color: #2e5087;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.boards {
+     width: 100%;
+     display: flex;
+     margin-top: 3rem;
+}
+
+.board {
+     width: 220px;
+     background-color: #353535;
+     margin: 0 1rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 1.2rem;
+     border-radius: 4px;
+     align-self: flex-start;
+}    
+
+
+
+.board>h3 {
+     color: white;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-weight: 300;
+     letter-spacing: .6px;
+     font-size: 1.2rem;
+     padding: 6px;
+     margin: 0;
+     border-bottom: 1px solid #444444;
+}
+
+
+.card {
+     position: relative;
+     border-radius: 2px;
+     background-color: #444444;
+     width: 100%;
+     min-width: 200px;
+     min-height: 80px;
+     max-height: 100px;
+     cursor: move;
+     transform: .2s ease-in-out;
+     margin: 12px 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.card.card-move {
+     opacity: .3;
+     border: 1px dashed #fff;
+     transform: rotateZ(2deg);
+     transition: .1s ease-in-out;
+     cursor: move;
+     margin: 12px 0;
+}
+
+.input-card{
+     padding: 8px;
+     border: none;
+     width: 80%;
+}
+
+.dropzone {
+     width: 100%;
+     background-color: transparent;
+     border-radius: 2px;
+     transition: .2s;
+     opacity: 1;
+     padding: 6px 0;
+}
+
+.dropzone.zone-over {
+     background-color: #4cd13711;
+     transition: .2s ease-in-out;
+     transform: scale(.96)
+}
+
+.dropzone.highlight {
+     transition: .2s;
+     opacity: .4;
+}
+
+
+.content {
+     padding: 2px 6px;
+}
+
+
+.content>p {
+     color: white;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: .9rem;
+     font-weight: 300;
+     line-height: 21px;
+}
+
+
+.board.add-card {
+     background-color: #444444ee;
+     border: 1px solid #444444;
+     padding: 16px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     transition: .2s ease-in-out;
+}
+
+.board.add-card:hover {
+     cursor: pointer;
+     transition: .2s ease-in-out;
+     background-color: #444444aa;
+}
+.board.add-card:hover span i{
+     transition: .2s ease-in-out;
+     transform: scale(1.1);
+}
+
+.add-card {
+
+}
+
+.add-card > span i {
+     transition: .2s ease-in-out;
+     font-size: 1.8rem;
+     color: white;
+}
+
+
+
+.buttons-action {
+     border-top: 0.5px solid #444444;
+     padding: 16px 6px;
+     margin-top: 16px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+}
+
+.b-remove-card {
+     padding: 7px;
+     border-radius: 4px;
+     border: none;
+     background-color: #dd5353;
+     transition: .3s ease-in-out;
+     color: #fff;
+}
+
+.b-remove-card:hover {
+     background-color: #dd5353cc;
+     transition: .3s ease-in-out;
+     cursor: pointer;
+}
+
+
+
+.message-card {
+     display: inline-flex;
+     padding: 10px;
+     margin: 6px 6px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: 1.4rem;
+     color: white;
+     background-color: #42b700;
+     opacity: 0;
+     border-radius: 4px;
+}
+
+
+
+
+.content-board-removed {
+     opacity: 0; 
+     width: 50%;
+     display: flex;
+     background-color: #f9232359;
+     padding: 10px;
+     margin-top: -30px;
+     border-radius: 4px;
+     transition: .3s ease-in-out;
+     border: 2px dotted gray;                  
+}
+
+.dropzone-removed {
+     display: flex;
+     width: 100%;
+}
+
+.items-removed {
+     padding: 10px;
+     background-color: white;
+}
+
+.icon-removed-board {
+     font-size: 2rem;
+     color: #fff;
+}
+
+.content-trash-title {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 130px;
+}
+
+.title-trash {
+     font-size: 1.1rem;
+     color: white;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
