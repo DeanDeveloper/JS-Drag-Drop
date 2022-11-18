@@ -1,5 +1,10 @@
 let init = () => {
 
+     // let clone = document.querySelector('.content-board-removed');
+     // let clonado = clone.cloneNode(true);
+
+     // console.log(clonado)
+
      let cards = document.querySelectorAll('.dropzone .card');
      let dropzones = document.querySelectorAll('.dropzone');
 
@@ -41,7 +46,9 @@ let init = () => {
           showTrash(false);
           
           let deleteItems = document.querySelector('.dropzone-removed .card');
-          deleteItems.remove();
+
+          deleteItems ? deleteItems.remove() : null
+          
      }
 
 
