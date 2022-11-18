@@ -115,6 +115,7 @@ body {
      justify-content: center;
      align-items: center;
      transition: .2s ease-in-out;
+     order: 1;
 }
 
 .board.add-card:hover {
@@ -125,10 +126,6 @@ body {
 .board.add-card:hover span i{
      transition: .2s ease-in-out;
      transform: scale(1.1);
-}
-
-.add-card {
-
 }
 
 .add-card > span i {

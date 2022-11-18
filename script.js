@@ -44,11 +44,11 @@ let init = () => {
           this.classList.remove('card-move');
 
           showTrash(false);
-          
+
           let deleteItems = document.querySelector('.dropzone-removed .card');
 
           deleteItems ? deleteItems.remove() : null
-          
+
      }
 
 
@@ -117,6 +117,23 @@ let init = () => {
 
      }
 
+
+
+     // let add card action
+     let buttonAdd = document.querySelector('.add-card')
+     buttonAdd.addEventListener('click', addCard)
+
+     function addCard() {
+
+          let mainBoards = document.querySelector('.boards');
+          let board = document.querySelector('.board');
+
+          let copyBoard = board.cloneNode(true);
+
+          mainBoards.appendChild(copyBoard);
+
+          init()
+     }
 }
 
 
