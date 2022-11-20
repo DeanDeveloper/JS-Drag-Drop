@@ -12,6 +12,7 @@ let init = () => {
                item.addEventListener('dragstart', handlerDragStart);
                item.addEventListener('drag', handlerDrag);
                item.addEventListener('dragend', handlerDragEnd);
+
           });
 
 
@@ -30,6 +31,8 @@ let init = () => {
      function handlerDragStart() {
           dropzones.forEach(dropzone => dropzone.classList.add('highlight'))
           this.classList.add('card-move');
+
+          this.classList.remove('effectCreateCard');
 
           showTrash(true);
      }
@@ -219,6 +222,8 @@ function createItemDinamic() {
 
      newItemCard.setAttribute('draggable', true);
 
+     newItemCard.classList.add('effectCreateCard');
+
      dropzonePush.appendChild(newItemCard);
      newItemCard.appendChild(newContentItem);
      newContentItem.appendChild(newTextContent);
@@ -228,5 +233,4 @@ function createItemDinamic() {
 
 
 init();
-
 handlerNewItem();
