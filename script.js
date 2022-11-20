@@ -1,29 +1,28 @@
 let init = () => {
 
-     // let clone = document.querySelector('.content-board-removed');
-     // let clonado = clone.cloneNode(true);
-
-     // console.log(clonado)
-
      let cards = document.querySelectorAll('.dropzone .card');
      let dropzones = document.querySelectorAll('.dropzone');
 
+     loadEvents();
 
-     cards.forEach(item => {
-          item.style.cssText = 'pointer-events: auto';
-          item.addEventListener('dragstart', handlerDragStart);
-          item.addEventListener('drag', handlerDrag);
-          item.addEventListener('dragend', handlerDragEnd);
-     });
+     function loadEvents() {
+
+          cards.forEach(item => {
+               item.style.cssText = 'pointer-events: auto';
+               item.addEventListener('dragstart', handlerDragStart);
+               item.addEventListener('drag', handlerDrag);
+               item.addEventListener('dragend', handlerDragEnd);
+          });
 
 
-     dropzones.forEach(zones => {
-          zones.style.cssText = 'pointer-events: auto';
-          zones.addEventListener('dragenter', handlerDragEnter);
-          zones.addEventListener('dragover', handlerDragOver);
-          zones.addEventListener('dragleave', handlerDragLeave);
-          zones.addEventListener('drop', handlerDragDrop);
-     })
+          dropzones.forEach(zones => {
+               zones.style.cssText = 'pointer-events: auto';
+               zones.addEventListener('dragenter', handlerDragEnter);
+               zones.addEventListener('dragover', handlerDragOver);
+               zones.addEventListener('dragleave', handlerDragLeave);
+               zones.addEventListener('drop', handlerDragDrop);
+          })
+     }
 
 
 
@@ -117,25 +116,29 @@ let init = () => {
 
      }
 
-
-
-     // let add card action
-     let buttonAdd = document.querySelector('.add-card')
-     buttonAdd.addEventListener('click', addCard)
-
-     function addCard() {
-
-          let mainBoards = document.querySelector('.boards');
-          let board = document.querySelector('.board');
-
-          let copyBoard = board.cloneNode(true);
-
-          mainBoards.appendChild(copyBoard);
-
-          init()
-     }
 }
 
+
+
+// let add card action
+let buttonAdd = document.querySelector('.add-card')
+buttonAdd.addEventListener('click', addCard)
+
+function addCard() {
+
+     let mainBoards = document.querySelector('.boards');
+     let board = document.querySelector('.board');
+
+     let copyBoard = board.cloneNode(true);
+
+     mainBoards.appendChild(copyBoard);
+
+     // remove todos cards, caso houver na criação
+     copyBoard.querySelectorAll('.card').forEach(items => items.remove())
+
+     init()
+
+}
 
 
 
