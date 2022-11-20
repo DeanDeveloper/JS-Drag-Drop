@@ -95,13 +95,15 @@ let init = () => {
 
 
 
+
+
      function removeCard() {
           let card = this.parentElement.parentElement;
 
-          card.style.cssText = 'transition: .8s ease-out; transform: scale(.1) rotateZ(90deg); opacity: .0;  ';
+          card.style.cssText = 'transition: .5s ease-out; transform: scale(.1) rotateZ(90deg); opacity: .0;  ';
           setTimeout(() => {
                card.remove();
-          }, 800)
+          }, 500)
 
           let message = document.querySelector('.message-card');
 
@@ -126,15 +128,25 @@ buttonAdd.addEventListener('click', addCard)
 
 function addCard() {
 
-     let mainBoards = document.querySelector('.boards');
-     let board = document.querySelector('.board');
+     let mainBoard = document.querySelector('.boards');
 
-     let copyBoard = board.cloneNode(true);
+     let newCard = document.createElement('section');
+     let titleCard = document.createElement('h3');
+     let newDropzone = document.createElement('div');
 
-     mainBoards.appendChild(copyBoard);
 
-     // remove todos cards, caso houver na criação
-     copyBoard.querySelectorAll('.card').forEach(items => items.remove())
+     newCard.classList.add('board');
+     titleCard.textContent = 'Titulo Card';
+     newDropzone.classList.add('dropzone');
+
+     buttonRemove = document.querySelector('.buttons-action')
+     buttonClone = buttonRemove.cloneNode(true);
+
+     newCard.appendChild(titleCard);
+     newCard.appendChild(newDropzone);
+
+     mainBoard.appendChild(newCard);
+     newCard.appendChild(buttonClone);
 
      init()
 

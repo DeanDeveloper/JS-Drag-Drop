@@ -13,9 +13,11 @@ body {
      width: 100%;
      display: flex;
      margin-top: 3rem;
+     overflow-y: auto;
 }
 
 .board {
+     min-width: 220px;
      width: 220px;
      background-color: #353535;
      margin: 0 1rem;
@@ -174,6 +176,10 @@ body {
      border-radius: 4px;
 }
 
+
+.is--hidden {
+     display: none;
+}
 
 
 
