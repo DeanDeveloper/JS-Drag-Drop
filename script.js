@@ -142,13 +142,10 @@ function addCard() {
 
 function createButtonDinamic() {
 
-
-     // criar elementos dinamicamente
      let contentButtons = document.createElement('div');
      let buttonRemove = document.createElement('button');
      let iconTrash = document.createElement('i');
 
-     // Associar classe aos elementos
      contentButtons.classList.add('buttons-action');
      buttonRemove.classList.add(['b-action-item'], ['b-remove-item']);
      iconTrash.classList.add(['fas'], ['fa-trash-alt']);
