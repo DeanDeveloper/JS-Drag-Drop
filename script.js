@@ -100,10 +100,10 @@ let init = () => {
      function removeCard() {
           let card = this.parentElement.parentElement;
 
-          card.style.cssText = 'transition: .5s ease-out; transform: scale(.1) rotateZ(90deg); opacity: .0;  ';
+          card.style.cssText = 'transition: .3s ease-out; transform: scale(.1) rotateZ(90deg); opacity: .0;  ';
           setTimeout(() => {
                card.remove();
-          }, 500)
+          }, 300)
 
           let message = document.querySelector('.message-card');
 
@@ -117,6 +117,8 @@ let init = () => {
           }, 2000)
 
      }
+
+     
 
 }
 
@@ -132,8 +134,7 @@ function addCard() {
      let newCard = createCardDinamic();
 
      mainBoard.appendChild(newCard);
-
-     console.log(mainBoard);
+     handlerNewItem();
 
      init()
 
@@ -193,5 +194,42 @@ function createCardDinamic() {
 }
 
 
+function handlerNewItem() {
+     let clickedItem = document.querySelectorAll('.add-item-list');
 
-init()
+
+     clickedItem.forEach( e => {
+          
+          e.addEventListener('click', createItemDinamic);
+
+     });
+          
+}
+
+
+function createItemDinamic() {
+
+     cardClicked  = this.parentElement;
+     let dropzonePush = cardClicked.querySelector('.dropzone');
+
+     let newItemCard = document.createElement('div');
+     let newContentItem = document.createElement('div');
+     let newTextContent = document.createElement('p');
+
+     newItemCard.classList.add('card');
+     newContentItem.classList.add('content');
+     newTextContent.textContent = 'Meu novo item do card';
+
+     newItemCard.setAttribute('draggable', true);
+
+     dropzonePush.appendChild(newItemCard);
+     newItemCard.appendChild(newContentItem);
+     newContentItem.appendChild(newTextContent);
+
+     init()
+}
+
+
+init();
+
+handlerNewItem();
