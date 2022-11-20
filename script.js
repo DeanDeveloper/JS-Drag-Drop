@@ -87,7 +87,7 @@ let init = () => {
 
 
      //delete card action
-     let buttonsRemove = document.querySelectorAll('.b-remove-card')
+     let buttonsRemove = document.querySelectorAll('.b-remove-item')
 
      buttonsRemove.forEach(button => {
           button.addEventListener('click', removeCard)
@@ -129,27 +129,67 @@ buttonAdd.addEventListener('click', addCard)
 function addCard() {
 
      let mainBoard = document.querySelector('.boards');
+     let newCard = createCardDinamic();
 
+     mainBoard.appendChild(newCard);
+
+     console.log(mainBoard);
+
+     init()
+
+}
+
+function createButtonDinamic() {
+
+
+     // criar elementos dinamicamente
+     let contentButtons = document.createElement('div');
+     let buttonRemove = document.createElement('button');
+     let iconTrash = document.createElement('i');
+
+     // Associar classe aos elementos
+     contentButtons.classList.add('buttons-action');
+     buttonRemove.classList.add(['b-action-item'], ['b-remove-item']);
+     iconTrash.classList.add(['fas'], ['fa-trash-alt']);
+
+     contentButtons.appendChild(buttonRemove);
+     buttonRemove.appendChild(iconTrash);
+
+     buttonRemove.style.cssText = `flex-direction: row-reverse`;
+
+     buttonRemove.innerHTML = ' Excluir cartão';
+
+     return contentButtons;
+
+}
+
+function createCardDinamic() {
      let newCard = document.createElement('section');
      let titleCard = document.createElement('h3');
      let newDropzone = document.createElement('div');
+     let spanAddItem = document.createElement('span');
+     let iconSpanAddItem = document.createElement('i');
 
 
      newCard.classList.add('board');
      titleCard.textContent = 'Titulo Card';
      newDropzone.classList.add('dropzone');
+     spanAddItem.classList.add('add-item-list');
+     iconSpanAddItem.classList.add(['fas'], ['fa-plus'], ['icon-add-item']);
 
-     buttonRemove = document.querySelector('.buttons-action')
-     buttonClone = buttonRemove.cloneNode(true);
+     spanAddItem.textContent = 'adicionar item';
 
      newCard.appendChild(titleCard);
      newCard.appendChild(newDropzone);
+     newCard.appendChild(spanAddItem);
+     spanAddItem.appendChild(iconSpanAddItem);
 
-     mainBoard.appendChild(newCard);
-     newCard.appendChild(buttonClone);
+     spanAddItem.style.cssText = `flex-direction: row-reverse`;
 
-     init()
+     let contentButtons = createButtonDinamic();
+     newCard.appendChild(contentButtons);
 
+     return newCard;
 }
 
 

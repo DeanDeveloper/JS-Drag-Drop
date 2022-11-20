@@ -17,8 +17,8 @@ body {
 }
 
 .board {
-     min-width: 220px;
-     width: 220px;
+     min-width: 255px;
+     width: 255px;
      background-color: #353535;
      margin: 0 1rem;
      display: flex;
@@ -27,7 +27,7 @@ body {
      padding: 1.2rem;
      border-radius: 4px;
      align-self: flex-start;
-}    
+}
 
 
 
@@ -68,7 +68,7 @@ body {
      margin: 12px 0;
 }
 
-.input-card{
+.input-card {
      padding: 8px;
      border: none;
      width: 80%;
@@ -125,12 +125,13 @@ body {
      transition: .2s ease-in-out;
      background-color: #444444aa;
 }
-.board.add-card:hover span i{
+
+.board.add-card:hover span i {
      transition: .2s ease-in-out;
      transform: scale(1.1);
 }
 
-.add-card > span i {
+.add-card>span i {
      transition: .2s ease-in-out;
      font-size: 1.8rem;
      color: white;
@@ -143,26 +144,69 @@ body {
      padding: 16px 6px;
      margin-top: 16px;
      display: flex;
-     justify-content: flex-end;
+     justify-content: space-between;
+     gap: 0 4px;
      align-items: center;
 }
 
-.b-remove-card {
+.b-action-item {
      padding: 7px;
      border-radius: 4px;
      border: none;
-     background-color: #dd5353;
      transition: .3s ease-in-out;
      color: #fff;
+     display: inline-flex;
 }
 
-.b-remove-card:hover {
-     background-color: #dd5353cc;
+.b-remove-item {
+     background-color: #dd5353;
+}
+
+.b-add-item {
+     background-color: #53cf71;
+}
+
+
+.b-action-item:hover {
      transition: .3s ease-in-out;
      cursor: pointer;
 }
 
+.b-add-item:hover {
+     background-color: #53cf71cc;
+}
 
+.b-remove-item:hover {
+     background-color: #dd5353cc;
+}
+
+.b-action-item i {
+     margin-right: 5px;
+}
+
+.add-item-list {
+     margin-top: 14px;
+     align-items: center;
+     cursor: pointer;
+     padding: 4px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     color: #53cf71;
+     font-size: .8rem;
+     font-family: sans-serif;
+     transition: .3s ease-in-out; 
+}
+
+.icon-add-item {
+     margin-right: 5px;
+     font-size: .8rem;
+}
+
+.add-item-list:hover {
+     transition: .3s ease-in-out;
+     color: #53cf71cc;
+}
 
 .message-card {
      display: inline-flex;
@@ -184,7 +228,7 @@ body {
 
 
 .content-board-removed {
-     opacity: 0; 
+     opacity: 0;
      width: 50%;
      display: flex;
      background-color: #f9232359;
@@ -192,7 +236,7 @@ body {
      margin-top: -30px;
      border-radius: 4px;
      transition: .3s ease-in-out;
-     border: 2px dotted gray;                  
+     border: 2px dotted gray;
 }
 
 .dropzone-removed {
